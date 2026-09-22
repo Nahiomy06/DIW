@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            /* =========================================================
+               WHIMSICAL CLOSET — CYBER Y2K SHOP
+               ========================================================= */
+
+            .wc-shop {
+                --wc-black: #0a0a0a;
+                --wc-black-2: #111111;
+                --wc-pink: #ff2a8d;
+                --wc-lila: #9d6bff;
+                --wc-white: #f8f4fa;
+                --wc-gray: #a9a2ad;
+
+                background:
+                    radial-gradient(
+                        circle at 90% 10%,
+                        rgba(157, 107, 255, 0.1),
+                        transparent 25%
+                    ),
+                    var(--wc-black);
+
+                color: var(--wc-white);
+                font-family: "Open Sans", "Roboto", Arial, sans-serif;
+                min-height: 100vh;
+            }
+
+            .wc-shop *,
+            .wc-shop *::before,
+            .wc-shop *::after {
+                box-sizing: border-box;
+            }
+
+            .wc-shop-container {
+                width: min(1400px, 92%);
+                margin: auto;
+            }
+
+            /* =========================================================
+               HEADER
+               ========================================================= */
+
+            .wc-shop-header {
+                border-bottom: 1px solid rgba(255, 42, 141, 0.5);
+                padding: 18px 0;
+            }
+
+            .wc-shop-header-inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .wc-shop-logo {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: white;
+                text-decoration: none;
+                font-size: 17px;
+                line-height: 0.9;
+                font-weight: 800;
+                letter-spacing: 1px;
+            }
+
+            .wc-shop-orbit {
+                width: 42px;
+                height: 42px;
+                border: 1px solid var(--wc-pink);
+                border-radius: 50%;
+                position: relative;
+                box-shadow: 0 0 15px rgba(255, 42, 141, 0.5);
+            }
+
+            .wc-shop-orbit::after {
+                content: "♥";
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                color: var(--wc-pink);
+            }
+
+            /* =========================================================
+               SHOP INTRO
+               ========================================================= */
+
+            .wc-shop-intro {
+                padding: 65px 0 30px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                position: relative;
+            }
+
+            .wc-shop-intro h1 {
+                margin: 0 0 10px;
+                font-size: clamp(45px, 7vw, 80px);
+                line-height: 0.9;
+                text-transform: uppercase;
+                font-style: italic;
+                color: var(--wc-pink);
+                text-shadow: 0 0 20px rgba(255, 42, 141, 0.35);
+            }
+
+            .wc-shop-intro p {
+                color: var(--wc-gray);
+                font-size: 14px;
+            }
+
+            .wc-shop-orbit-decoration {
+                position: absolute;
+                right: 4%;
+                top: 30px;
+                width: 150px;
+                height: 55px;
+                border: 1px solid var(--wc-pink);
+                border-radius: 50%;
+                transform: rotate(-15deg);
+                box-shadow: 0 0 15px rgba(255, 42, 141, 0.35);
+            }
+
+            /* =========================================================
+               SHOP LAYOUT
+               ========================================================= */
+
+            .wc-shop-layout {
+                display: grid;
+                grid-template-columns: 230px 1fr;
+                gap: 30px;
+                padding: 35px 0 80px;
+            }
+
+            /* =========================================================
+               FILTERS
+               ========================================================= */
+
+            .wc-filters {
+                border: 1px solid rgba(255, 42, 141, 0.65);
+                background: rgba(255, 255, 255, 0.025);
+                padding: 20px;
+                height: fit-content;
+                backdrop-filter: blur(12px);
+            }
+
+            .wc-filters h2 {
+                margin: 0 0 25px;
+                color: var(--wc-pink);
+                font-size: 18px;
+                text-transform: uppercase;
+                font-style: italic;
+            }
+
+            .wc-filter-group {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 20px 0;
+            }
+
+            .wc-filter-group:first-of-type {
+                border-top: 0;
+                padding-top: 0;
+            }
+
+            .wc-filter-title {
+                margin-bottom: 14px;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .wc-filter-option {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 8px;
+                margin: 12px 0;
+                font-size: 12px;
+                color: var(--wc-gray);
+                cursor: pointer;
+            }
+
+            .wc-filter-option:hover {
+                color: white;
+            }
+
+            .wc-filter-option input {
+                accent-color: var(--wc-pink);
+            }
+
+            .wc-filter-count {
+                color: #777;
+            }
+
+            .wc-color {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .wc-color-dot {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: 1px solid white;
+                display: inline-block;
+            }
+
+            .wc-pink-dot {
+                background: var(--wc-pink);
+            }
+
+            .wc-lila-dot {
+                background: var(--wc-lila);
+            }
+
+            .wc-white-dot {
+                background: white;
+            }
+
+            /* =========================================================
+               PRODUCTS
+               ========================================================= */
+
+            .wc-products-area {
+                min-width: 0;
+            }
+
+            .wc-products-toolbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+                gap: 15px;
+            }
+
+            .wc-products-count {
+                color: var(--wc-gray);
+                font-size: 12px;
+            }
+
+            .wc-sort {
+                background: transparent;
+                border: 1px solid rgba(255, 42, 141, 0.6);
+                color: white;
+                padding: 10px 15px;
+                outline: none;
+            }
+
+            .wc-product-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+
+            /* PRODUCT CARD */
+
+            .wc-product {
+                position: relative;
+                background: linear-gradient(
+                    145deg,
+                    rgba(255, 255, 255, 0.045),
+                    rgba(255, 255, 255, 0.01)
+                );
+                border: 1px solid rgba(255, 42, 141, 0.65);
+                overflow: hidden;
+                transition: 0.35s ease;
+            }
+
+            .wc-product:hover {
+                transform: translateY(-5px);
+                box-shadow:
+                    0 0 12px rgba(255, 42, 141, 0.7),
+                    0 0 30px rgba(255, 42, 141, 0.2);
+            }
+
+            .wc-product-image {
+                height: 300px;
+                background-size: cover;
+                background-position: center;
+                position: relative;
+            }
+
+            .wc-product:nth-child(1) .wc-product-image {
+                background-image: url("/wp-content/uploads/star-glow-top.jpg");
+            }
+
+            .wc-product:nth-child(2) .wc-product-image {
+                background-image: url("/wp-content/uploads/chrome-cargo.jpg");
+            }
+
+            .wc-product:nth-child(3) .wc-product-image {
+                background-image: url("/wp-content/uploads/lunar-hoodie.jpg");
+            }
+
+            .wc-product:nth-child(4) .wc-product-image {
+                background-image: url("/wp-content/uploads/angel-mesh.jpg");
+            }
+
+            .wc-product:nth-child(5) .wc-product-image {
+                background-image: url("/wp-content/uploads/chrome-skirt.jpg");
+            }
+
+            .wc-product:nth-child(6) .wc-product-image {
+                background-image: url("/wp-content/uploads/galaxy-boots.jpg");
+            }
+
+            .wc-product:nth-child(7) .wc-product-image {
+                background-image: url("/wp-content/uploads/stellar-bag.jpg");
+            }
+
+            .wc-product:nth-child(8) .wc-product-image {
+                background-image: url("/wp-content/uploads/y2k-shades.jpg");
+            }
+
+            .wc-product:nth-child(9) .wc-product-image {
+                background-image: url("/wp-content/uploads/cosmic-headphones.jpg");
+            }
+
+            .wc-product-tag {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background: var(--wc-pink);
+                color: white;
+                padding: 5px 9px;
+                font-size: 9px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .wc-product-favorite {
+                position: absolute;
+                top: 10px;
+                right: 12px;
+                color: white;
+                font-size: 20px;
+            }
+
+            .wc-product-info {
+                padding: 15px;
+            }
+
+            .wc-product-name {
+                font-size: 13px;
+                margin: 0 0 7px;
+            }
+
+            .wc-product-price {
+                color: white;
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+
+            .wc-product-colors {
+                display: flex;
+                gap: 5px;
+                margin-bottom: 12px;
+            }
+
+            .wc-product-colors span {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 1px solid white;
+            }
+
+            .wc-add {
+                display: block;
+                width: 100%;
+                border: 1px solid var(--wc-pink);
+                background: transparent;
+                color: white;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 10px;
+                text-transform: uppercase;
+                transition: 0.3s ease;
+            }
+
+            .wc-add:hover {
+                background: var(--wc-pink);
+                box-shadow: 0 0 15px rgba(255, 42, 141, 0.7);
+            }
+
+            /* =========================================================
+               FREE SHIPPING CARD
+               ========================================================= */
+
+            .wc-promo-card {
+                border: 1px solid rgba(255, 42, 141, 0.65);
+                margin-top: 18px;
+                padding: 25px 18px;
+                text-align: center;
+                background: radial-gradient(
+                    circle,
+                    rgba(255, 42, 141, 0.12),
+                    transparent 65%
+                );
+            }
+
+            .wc-promo-card strong {
+                display: block;
+                color: var(--wc-pink);
+                font-size: 17px;
+                margin-bottom: 5px;
+            }
+
+            .wc-promo-card span {
+                color: var(--wc-gray);
+                font-size: 11px;
+            }
+
+            /* =========================================================
+               PAGINATION
+               ========================================================= */
+
+            .wc-pagination {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 35px;
+            }
+
+            .wc-pagination a {
+                width: 32px;
+                height: 32px;
+                display: grid;
+                place-items: center;
+                border: 1px solid rgba(255, 42, 141, 0.5);
+                color: white;
+                text-decoration: none;
+                font-size: 11px;
+            }
+
+            .wc-pagination a.active,
+            .wc-pagination a:hover {
+                background: var(--wc-pink);
+            }
+
+            /* =========================================================
+               FOOTER
+               ========================================================= */
+
+            .wc-shop-footer {
+                border-top: 1px solid rgba(255, 42, 141, 0.5);
+                padding: 25px 0;
+            }
+
+            .wc-shop-footer-inner {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+                color: #777;
+                font-size: 11px;
+            }
+
+            /* =========================================================
+               MOBILE
+               ========================================================= */
+
+            @media (max-width: 768px) {
+                .wc-shop-layout {
+                    grid-template-columns: 1fr;
+                }
+
+                .wc-filters {
+                    position: static;
+                }
+
+                .wc-product-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .wc-product-image {
+                    height: 240px;
+                }
+
+                .wc-shop-orbit-decoration {
+                    display: none;
+                }
+
+                .wc-shop-footer-inner {
+                    flex-direction: column;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .wc-product-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .wc-products-toolbar {
+                    flex-direction: column;
+                    align-items: stretch;
+                }
+
+                .wc-sort {
+                    width: 100%;
+                }
+            }
+        </style>
+
+
+        <section class="wc-shop">
+
+            <!-- HEADER -->
+
+            <header class="wc-shop-header">
+
+                <div class="wc-shop-container wc-shop-header-inner">
+
+                    <a href="/" class="wc-shop-logo">
+
+                        <span class="wc-shop-orbit"></span>
+
+                        <span>
+                            WHIMSICAL<br>
+                            CLOSET
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+
+            <!-- INTRO -->
+
+            <section class="wc-shop-intro">
+
+                <div class="wc-shop-container">
+
+                    <h1>
+                        Shop
+                    </h1>
+
+                    <p>
+                        Alternative fashion. Futuristic vibes.
+                        Find your next obsession.
+                    </p>
+
+                </div>
+
+                <div class="wc-shop-orbit-decoration"></div>
+
+            </section>
+
+
+            <!-- SHOP -->
+
+            <main class="wc-shop-container wc-shop-layout">
+
+
+                <!-- FILTER SIDEBAR -->
+
+                <aside class="wc-filters">
+
+                    <h2>
+                        Filters
+                    </h2>
+
+
+                    <div class="wc-filter-group">
+
+                        <div class="wc-filter-title">
+                            Categories
+                        </div>
+
+                        <label class="wc-filter-option">
+
+                            <span>
+                                <input type="checkbox">
+                                Tops
+                            </span>
+
+                            <span class="wc-filter-count">
+                                24
+                            </span>
+
+                        </label>
+
+
+                        <label class="wc-filter-option">
+
+                            <span>
+                                <input type="checkbox">
+                                Bottoms
+                            </span>
+
+                            <span class="wc-filter-count">
+                                18
+                            </span>
+
+                        </label>
+
+
+                        <label class="wc-filter-option">
+
+                            <span>
+                                <input type="checkbox">
+                                Gear Protocol
+                            </span>
+
+                            <span class="wc-filter-count">
+                                12
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="wc-filter-group">
+
+                        <div class="wc-filter-title">
+                            Color
+                        </div>
+
+
+                        <label class="wc-filter-option">
+
+                            <span class="wc-color">
+                                <span class="wc-color-dot wc-pink-dot"></span>
+                                Neon Pink
+                            </span>
+
+                            <span>18</span>
+
+                        </label>
+
+
+                        <label class="wc-filter-option">
+
+                            <span class="wc-color">
+                                <span class="wc-color-dot wc-lila-dot"></span>
+                                Lavender
+                            </span>
+
+                            <span>16</span>
+
+                        </label>
+
+
+                        <label class="wc-filter-option">
+
+                            <span class="wc-color">
+                                <span class="wc-color-dot wc-white-dot"></span>
+                                Stellar White
+                            </span>
+
+                            <span>14</span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="wc-filter-group">
+
+                        <div class="wc-filter-title">
+                            Price Range
+                        </div>
+
+                        <input
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="100"
+                            style="width:100%; accent-color:#FF2A8D;"
+                        >
+
+                        <div
+                            style="
+                    display:flex;
+                    justify-content:space-between;
+                    font-size:10px;
+                    color:#777;
+                    margin-top:7px;
+                "
+                        >
+                            <span>€0</span>
+                            <span>€100+</span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="wc-add"
+                    >
+                        Clear filters ↻
+                    </button>
+
+
+                    <div class="wc-promo-card">
+
+                        <strong>
+                            FREE SHIPPING
+                        </strong>
+
+                        <span>
+                            Orders over €80
+                        </span>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- PRODUCTS -->
+
+                <section class="wc-products-area">
+
+
+                    <div class="wc-products-toolbar">
+
+                        <span class="wc-products-count">
+                            24 products
+                        </span>
+
+                        <select class="wc-sort">
+
+                            <option>
+                                Sort by: Featured
+                            </option>
+
+                            <option>
+                                Price: Low to High
+                            </option>
+
+                            <option>
+                                Price: High to Low
+                            </option>
+
+                            <option>
+                                Newest
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="wc-product-grid">
+
+
+                        <!-- PRODUCT 1 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    New
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Star Glow Top
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €32.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#FF2A8D"></span>
+                                    <span style="background:#9D6BFF"></span>
+                                    <span style="background:white"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 2 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    Hot
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Cyber Cargo Pants
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €58.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#fff"></span>
+                                    <span style="background:#9D6BFF"></span>
+                                    <span style="background:#aaa"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 3 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    New
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Lunar Hoodie
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €65.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#ffb6d9"></span>
+                                    <span style="background:#fff"></span>
+                                    <span style="background:#9D6BFF"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 4 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    New
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Angel Mesh Top
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €36.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#fff"></span>
+                                    <span style="background:#FF2A8D"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 5 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    Hot
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Chrome Skirt
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €42.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#ddd"></span>
+                                    <span style="background:#fff"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 6 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    New
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Galaxy Boots
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €78.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#9D6BFF"></span>
+                                    <span style="background:#ff2a8d"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 7 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    New
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Stellar Bag
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €40.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#fff"></span>
+                                    <span style="background:#9D6BFF"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 8 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    Hot
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Y2K Shades
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €26.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#FF2A8D"></span>
+                                    <span style="background:#111"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- PRODUCT 9 -->
+
+                        <article class="wc-product">
+
+                            <div class="wc-product-image">
+
+                                <span class="wc-product-tag">
+                                    New
+                                </span>
+
+                                <span class="wc-product-favorite">
+                                    ♡
+                                </span>
+
+                            </div>
+
+                            <div class="wc-product-info">
+
+                                <h3 class="wc-product-name">
+                                    Cosmic Headphones
+                                </h3>
+
+                                <div class="wc-product-price">
+                                    €56.00
+                                </div>
+
+                                <div class="wc-product-colors">
+                                    <span style="background:#9D6BFF"></span>
+                                    <span style="background:#FF2A8D"></span>
+                                </div>
+
+                                <button class="wc-add">
+                                    ♡ Add to bag
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- PAGINATION -->
+
+                    <nav class="wc-pagination">
+
+                        <a href="#">‹</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">›</a>
+
+                    </nav>
+
+                </section>
+
+            </main>
+
+
+            <!-- FOOTER -->
+
+            <footer class="wc-shop-footer">
+
+                <div class="wc-shop-container wc-shop-footer-inner">
+
+                    <span>
+                        DREAM ✦ DRESS ✦ REPEAT
+                    </span>
+
+                    <span>
+                        © 2026 Whimsical Closet
+                    </span>
+
+                </div>
+
+            </footer>
+
+        </section>
+    
+    </body>
+</html>

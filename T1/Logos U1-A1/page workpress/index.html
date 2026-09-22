@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>wordpress 
+        </title>
+    </head>
+    <body>
+        <style>
+            /* =========================================================
+               WHIMSICAL CLOSET — CYBER Y2K HOME
+               ========================================================= */
+
+            .wc-home {
+                --wc-black: #0a0a0a;
+                --wc-black-2: #111111;
+                --wc-pink: #ff2a8d;
+                --wc-pink-light: #ff72b5;
+                --wc-lila: #9d6bff;
+                --wc-purple: #5d35b8;
+                --wc-white: #f8f4fa;
+                --wc-gray: #b9b3bd;
+
+                background:
+                    radial-gradient(
+                        circle at 20% 20%,
+                        rgba(255, 42, 141, 0.1),
+                        transparent 30%
+                    ),
+                    radial-gradient(
+                        circle at 80% 70%,
+                        rgba(157, 107, 255, 0.12),
+                        transparent 30%
+                    ),
+                    var(--wc-black);
+
+                color: var(--wc-white);
+                font-family: "Open Sans", "Roboto", Arial, sans-serif;
+                overflow: hidden;
+            }
+
+            .wc-home *,
+            .wc-home *::before,
+            .wc-home *::after {
+                box-sizing: border-box;
+            }
+
+            .wc-container {
+                width: min(1400px, 92%);
+                margin: auto;
+            }
+
+            /* =========================================================
+               HEADER
+               ========================================================= */
+
+            .wc-header {
+                min-height: 76px;
+                border-bottom: 1px solid rgba(255, 42, 141, 0.55);
+                background: rgba(10, 10, 10, 0.82);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                display: flex;
+                align-items: center;
+                position: relative;
+                z-index: 10;
+            }
+
+            .wc-header-inner {
+                width: min(1400px, 92%);
+                margin: auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 30px;
+            }
+
+            /* LOGO */
+
+            .wc-logo {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+                color: var(--wc-white);
+                flex-shrink: 0;
+            }
+
+            .wc-logo-orbit {
+                width: 48px;
+                height: 48px;
+                border: 1px solid var(--wc-pink);
+                border-radius: 50%;
+                position: relative;
+                box-shadow:
+                    0 0 8px var(--wc-pink),
+                    0 0 20px rgba(255, 42, 141, 0.45);
+            }
+
+            .wc-logo-orbit::before {
+                content: "";
+                position: absolute;
+                width: 62px;
+                height: 20px;
+                border: 1px solid var(--wc-pink);
+                border-radius: 50%;
+                top: 13px;
+                left: -8px;
+                transform: rotate(-25deg);
+            }
+
+            .wc-logo-orbit::after {
+                content: "♥";
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                color: var(--wc-pink);
+                font-size: 19px;
+                text-shadow: 0 0 12px var(--wc-pink);
+            }
+
+            .wc-logo-text {
+                font-size: 18px;
+                line-height: 0.9;
+                font-weight: 800;
+                letter-spacing: 1px;
+            }
+
+            /* NAVIGATION */
+
+            .wc-nav {
+                display: flex;
+                align-items: center;
+                gap: 38px;
+            }
+
+            .wc-nav a {
+                color: var(--wc-white);
+                text-decoration: none;
+                font-size: 13px;
+                transition: 0.3s ease;
+                position: relative;
+            }
+
+            .wc-nav a::after {
+                content: "";
+                width: 0;
+                height: 1px;
+                background: var(--wc-pink);
+                position: absolute;
+                left: 0;
+                bottom: -7px;
+                transition: 0.3s ease;
+                box-shadow: 0 0 8px var(--wc-pink);
+            }
+
+            .wc-nav a:hover {
+                color: var(--wc-pink);
+            }
+
+            .wc-nav a:hover::after {
+                width: 100%;
+            }
+
+            .wc-header-icons {
+                display: flex;
+                gap: 18px;
+                align-items: center;
+            }
+
+            .wc-icon-button {
+                border: 0;
+                background: none;
+                color: var(--wc-white);
+                cursor: pointer;
+                font-size: 21px;
+                transition: 0.3s ease;
+            }
+
+            .wc-icon-button:hover {
+                color: var(--wc-pink);
+                transform: scale(1.1);
+                text-shadow: 0 0 12px var(--wc-pink);
+            }
+
+            /* =========================================================
+               HERO
+               ========================================================= */
+
+            .wc-hero {
+                min-height: 620px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                border-bottom: 1px solid rgba(255, 42, 141, 0.4);
+            }
+
+            .wc-hero::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(10, 10, 10, 0.98) 0%,
+                    rgba(10, 10, 10, 0.8) 40%,
+                    rgba(10, 10, 10, 0.2) 75%,
+                    rgba(10, 10, 10, 0.85) 100%
+                );
+                z-index: 1;
+            }
+
+            .wc-hero-image {
+                position: absolute;
+                inset: 0;
+                background: url("/wp-content/uploads/whimsical-hero.jpg") center / cover
+                    no-repeat;
+                opacity: 0.75;
+            }
+
+            .wc-hero-content {
+                position: relative;
+                z-index: 2;
+                width: min(1400px, 92%);
+                margin: auto;
+                padding: 80px 0;
+            }
+
+            .wc-eyebrow {
+                color: var(--wc-pink);
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+            }
+
+            .wc-hero h1 {
+                max-width: 760px;
+                margin: 0;
+                font-size: clamp(48px, 7vw, 100px);
+                line-height: 0.9;
+                font-weight: 900;
+                font-style: italic;
+                letter-spacing: -4px;
+                text-transform: uppercase;
+
+                background: linear-gradient(
+                    120deg,
+                    #ffffff,
+                    #ffb7da,
+                    #ff2a8d,
+                    #c89cff,
+                    #ffffff
+                );
+
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+
+                filter: drop-shadow(0 0 12px rgba(255, 42, 141, 0.35));
+            }
+
+            .wc-hero-description {
+                max-width: 500px;
+                margin: 30px 0;
+                color: #ddd5df;
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
+            .wc-button {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                padding: 14px 24px;
+                border: 1px solid var(--wc-pink);
+                color: var(--wc-white);
+                background: rgba(255, 42, 141, 0.08);
+                text-decoration: none;
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: 0.3s ease;
+                box-shadow: 0 0 0 rgba(255, 42, 141, 0);
+            }
+
+            .wc-button:hover {
+                color: #fff;
+                background: var(--wc-pink);
+                box-shadow:
+                    0 0 12px var(--wc-pink),
+                    0 0 35px rgba(255, 42, 141, 0.5);
+                transform: translateY(-2px);
+            }
+
+            /* =========================================================
+               FLOATING DIGITAL DETAILS
+               ========================================================= */
+
+            .wc-floating {
+                position: absolute;
+                color: var(--wc-pink);
+                font-size: 11px;
+                letter-spacing: 2px;
+                z-index: 3;
+                opacity: 0.8;
+            }
+
+            .wc-floating.one {
+                right: 5%;
+                top: 25%;
+                transform: rotate(-15deg);
+            }
+
+            .wc-floating.two {
+                right: 12%;
+                bottom: 20%;
+            }
+
+            .wc-floating.three {
+                left: 3%;
+                bottom: 12%;
+                writing-mode: vertical-rl;
+            }
+
+            /* =========================================================
+               FEATURED COLLECTIONS
+               ========================================================= */
+
+            .wc-section {
+                padding: 90px 0;
+            }
+
+            .wc-section-heading {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 35px;
+                gap: 20px;
+            }
+
+            .wc-section-title {
+                color: var(--wc-pink);
+                font-size: clamp(25px, 4vw, 42px);
+                font-style: italic;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            .wc-section-link {
+                color: var(--wc-pink);
+                text-decoration: none;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .wc-collection-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px;
+            }
+
+            .wc-collection-card {
+                position: relative;
+                min-height: 470px;
+                border: 1px solid rgba(255, 42, 141, 0.65);
+                background: #0e0e0e;
+                overflow: hidden;
+                transition: 0.4s ease;
+            }
+
+            .wc-collection-card:hover {
+                transform: translateY(-7px);
+                box-shadow:
+                    0 0 12px rgba(255, 42, 141, 0.8),
+                    0 0 40px rgba(255, 42, 141, 0.25);
+            }
+
+            .wc-collection-image {
+                height: 330px;
+                background-position: center;
+                background-size: cover;
+                transition: 0.5s ease;
+            }
+
+            .wc-collection-card:hover .wc-collection-image {
+                transform: scale(1.05);
+            }
+
+            .wc-collection-card:nth-child(1) .wc-collection-image {
+                background-image: url("/wp-content/uploads/alternative-y2k.jpg");
+            }
+
+            .wc-collection-card:nth-child(2) .wc-collection-image {
+                background-image: url("/wp-content/uploads/futuristic-hoodies.jpg");
+            }
+
+            .wc-collection-card:nth-child(3) .wc-collection-image {
+                background-image: url("/wp-content/uploads/cyber-accessories.jpg");
+            }
+
+            .wc-collection-info {
+                padding: 22px;
+                position: relative;
+                background: linear-gradient(180deg, rgba(10, 10, 10, 0.85), #0a0a0a);
+            }
+
+            .wc-collection-info h3 {
+                margin: 0 0 8px;
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .wc-collection-info p {
+                margin: 0 0 18px;
+                color: var(--wc-gray);
+                font-size: 12px;
+            }
+
+            /* =========================================================
+               NEWSLETTER
+               ========================================================= */
+
+            .wc-newsletter {
+                border-top: 1px solid rgba(255, 42, 141, 0.5);
+                border-bottom: 1px solid rgba(255, 42, 141, 0.5);
+                padding: 35px 0;
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 42, 141, 0.08),
+                    rgba(157, 107, 255, 0.1),
+                    rgba(255, 42, 141, 0.08)
+                );
+            }
+
+            .wc-newsletter-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .wc-newsletter h2 {
+                margin: 0 0 6px;
+                font-size: 22px;
+                text-transform: uppercase;
+            }
+
+            .wc-newsletter p {
+                margin: 0;
+                color: var(--wc-gray);
+                font-size: 12px;
+            }
+
+            .wc-newsletter-form {
+                display: flex;
+                width: min(500px, 100%);
+            }
+
+            .wc-newsletter-form input {
+                flex: 1;
+                min-width: 0;
+                padding: 15px;
+                border: 1px solid rgba(255, 42, 141, 0.5);
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                outline: none;
+            }
+
+            .wc-newsletter-form button {
+                padding: 0 24px;
+                border: 0;
+                background: var(--wc-pink);
+                color: white;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: 11px;
+                font-weight: bold;
+            }
+
+            /* =========================================================
+               FOOTER
+               ========================================================= */
+
+            .wc-footer {
+                padding: 35px 0 20px;
+            }
+
+            .wc-footer-inner {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .wc-footer-links {
+                display: flex;
+                gap: 25px;
+            }
+
+            .wc-footer a {
+                color: var(--wc-gray);
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+            .wc-footer a:hover {
+                color: var(--wc-pink);
+            }
+
+            .wc-footer-copy {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 25px;
+                padding-top: 15px;
+                color: #666;
+                font-size: 10px;
+            }
+
+            /* =========================================================
+               MOBILE
+               ========================================================= */
+
+            @media (max-width: 768px) {
+                .wc-header-inner {
+                    flex-wrap: wrap;
+                    padding: 15px 0;
+                }
+
+                .wc-nav {
+                    order: 3;
+                    width: 100%;
+                    justify-content: center;
+                    gap: 18px;
+                    overflow-x: auto;
+                    padding-top: 8px;
+                }
+
+                .wc-nav a {
+                    white-space: nowrap;
+                    font-size: 11px;
+                }
+
+                .wc-hero {
+                    min-height: 620px;
+                }
+
+                .wc-hero h1 {
+                    letter-spacing: -2px;
+                }
+
+                .wc-hero::before {
+                    background: linear-gradient(
+                        90deg,
+                        rgba(10, 10, 10, 0.95),
+                        rgba(10, 10, 10, 0.65)
+                    );
+                }
+
+                .wc-collection-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .wc-collection-card {
+                    min-height: auto;
+                }
+
+                .wc-collection-image {
+                    height: 350px;
+                }
+
+                .wc-newsletter-inner {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .wc-newsletter-form {
+                    width: 100%;
+                }
+
+                .wc-footer-inner {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .wc-footer-links {
+                    flex-wrap: wrap;
+                }
+
+                .wc-floating {
+                    display: none;
+                }
+            }
+        </style>
+
+
+        <section class="wc-home">
+
+            <!-- HEADER -->
+            <header class="wc-header">
+
+                <div class="wc-header-inner">
+
+                    <a href="/" class="wc-logo">
+                        <span class="wc-logo-orbit"></span>
+
+                        <span class="wc-logo-text">
+                            WHIMSICAL<br>
+                            CLOSET
+                        </span>
+                    </a>
+
+                    <nav class="wc-nav">
+                        <a href="/shop/">Shop</a>
+                        <a href="/cosmic-luv/">Cosmic Luv</a>
+                        <a href="/lookbook/">Lookbook</a>
+                        <a href="/contact/">Contact</a>
+                    </nav>
+
+                    <div class="wc-header-icons">
+                        <button class="wc-icon-button" aria-label="Buscar">
+                            ⌕
+                        </button>
+
+                        <a
+                            href="/cart/"
+                            class="wc-icon-button"
+                            aria-label="Carrito"
+                        >
+                            ♡
+                        </a>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- HERO -->
+            <section class="wc-hero">
+
+                <div class="wc-hero-image"></div>
+
+                <span class="wc-floating one">
+                    ✦ 2000 // DIGITAL LOVE
+                </span>
+
+                <span class="wc-floating two">
+                    ◇ NEW ERA / 2026
+                </span>
+
+                <span class="wc-floating three">
+                    WHIMSICAL CLOSET
+                </span>
+
+                <div class="wc-hero-content">
+
+                    <div class="wc-eyebrow">
+                        WHIMSICAL CLOSET
+                    </div>
+
+                    <h1>
+                        COSMIC LUV:<br>
+                        Y2K EVOLUTION
+                    </h1>
+
+                    <p class="wc-hero-description">
+                        Futuristic looks. Timeless attitude.
+                        Step into a new era of fashion where
+                        alternative silhouettes meet cosmic energy.
+                    </p>
+
+                    <a href="/shop/" class="wc-button">
+                        Shop now →
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- COLLECTIONS -->
+            <section class="wc-section">
+
+                <div class="wc-container">
+
+                    <div class="wc-section-heading">
+
+                        <h2 class="wc-section-title">
+                            Featured Collections
+                        </h2>
+
+                        <a href="/shop/" class="wc-section-link">
+                            Explore all →
+                        </a>
+
+                    </div>
+
+
+                    <div class="wc-collection-grid">
+
+                        <article class="wc-collection-card">
+
+                            <div class="wc-collection-image"></div>
+
+                            <div class="wc-collection-info">
+
+                                <h3>
+                                    Alternative Y2K
+                                </h3>
+
+                                <p>
+                                    Iconic styles for a new generation.
+                                </p>
+
+                                <a
+                                    href="/shop/?category=tops"
+                                    class="wc-button"
+                                >
+                                    Explore →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="wc-collection-card">
+
+                            <div class="wc-collection-image"></div>
+
+                            <div class="wc-collection-info">
+
+                                <h3>
+                                    Futuristic Hoodies
+                                </h3>
+
+                                <p>
+                                    Comfort meets the cosmos.
+                                </p>
+
+                                <a
+                                    href="/shop/?category=hoodies"
+                                    class="wc-button"
+                                >
+                                    Explore →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="wc-collection-card">
+
+                            <div class="wc-collection-image"></div>
+
+                            <div class="wc-collection-info">
+
+                                <h3>
+                                    Cyber Accessories
+                                </h3>
+
+                                <p>
+                                    Small details. Big energy.
+                                </p>
+
+                                <a
+                                    href="/shop/?category=gear"
+                                    class="wc-button"
+                                >
+                                    Explore →
+                                </a>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NEWSLETTER -->
+            <section class="wc-newsletter">
+
+                <div class="wc-container wc-newsletter-inner">
+
+                    <div>
+                        <h2>
+                            Join the cyber-closet
+                        </h2>
+
+                        <p>
+                            Be the first to know about new drops,
+                            exclusive offers and more.
+                        </p>
+                    </div>
+
+                    <form class="wc-newsletter-form">
+
+                        <input
+                            type="email"
+                            placeholder="Your email address"
+                            aria-label="Email"
+                            required
+                        >
+
+                        <button type="submit">
+                            Subscribe →
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="wc-footer">
+
+                <div class="wc-container">
+
+                    <div class="wc-footer-inner">
+
+                        <a href="/" class="wc-logo">
+
+                            <span class="wc-logo-orbit"></span>
+
+                            <span class="wc-logo-text">
+                                WHIMSICAL<br>
+                                CLOSET
+                            </span>
+
+                        </a>
+
+
+                        <div class="wc-footer-links">
+
+                            <a href="/shop/">Shop</a>
+                            <a href="/cosmic-luv/">Cosmic Luv</a>
+                            <a href="/lookbook/">Lookbook</a>
+                            <a href="/contact/">Contact</a>
+
+                            <a href="#" aria-label="Instagram">
+                                Instagram
+                            </a>
+
+                            <a href="#" aria-label="TikTok">
+                                TikTok
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="wc-footer-copy">
+                        DREAM ✦ DRESS ✦ REPEAT
+                        <br><br>
+                        © 2026 Whimsical Closet. All rights reserved.
+                    </div>
+
+                </div>
+
+            </footer>
+
+        </section>
+    
+    </body>
+</html>

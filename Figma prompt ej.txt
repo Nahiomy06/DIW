@@ -1,0 +1,19 @@
+basandote en las estructura proporcionada apartir de la imagen, vamos a crear un wiframe de pagina de inicio, relativo a mi negocio que es "Lunéa" una empresa de jojeria con temas del espacio.
+En esta ocasion, la aplicacion sera tipo del tipo "Desktop first", pero deberas realizaela ajustada a las proporciones estandar para la mayoria de los modelos de pantalla HD.
+Para la gama de colores, utilizaremos los siguientes:
+Los primarios:
+#edf1ff
+#ff67b3
+#bc72f2
+#280e40
+Los secundarios:
+#ffbfeb
+#d851ad
+#edf1ff
+#aebaf7
+#e0eefc
+#060a6d
+
+Como tipografia, vamos a elegir la del tipo "Comic Sans", o la que mas se asemeje.
+Es necesario que se respete la estructura que se proporciona en el archivo de imagen de nombre "Captura de pantalla 2026-10-13 170140".
+En el navbar debe ir el logo que te proporciono en el archivp de imagen de nombre "isotipo".

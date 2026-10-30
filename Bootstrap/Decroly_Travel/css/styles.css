@@ -1,0 +1,25 @@
+/* css/estilos.css */
+:root {
+    --travel-navy: #0b3b5e;
+    --travel-teal: #008f9c;
+    --travel-coral: #ff7950;
+    --travel-cream: #f7ead7;
+}
+.text-brand {
+    color: var(--travel-teal);
+}
+.bg-brand {
+    background-color: var(--travel-navy);
+}
+.btn-brand {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--travel-teal);
+    --bs-btn-border-color: var(--travel-teal);
+    --bs-btn-hover-bg: var(--travel-navy);
+    --bs-btn-hover-border-color: var(--travel-navy);
+}
+.btn-action {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--travel-coral);
+    --bs-btn-border-color: var(--travel-coral);
+}

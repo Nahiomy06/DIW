@@ -7,55 +7,202 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
+
+        <!--NavBar-->
         <nav class="navbar navbar-expand-lg bg-white">
             <div class="container">
-                <img src="WireFrames/Logo.png">
+                <img src="imgs/Logo.png">
                 <a class="navbar-brand" href="index.html">Decroly Travel</a>
                 <button
                     class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#menuPrincipal"
-                    aria-controls="menuPrincipal"
-                    aria-expanded="false"
-                    aria-label="Abrir menú"
                 >
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="menuPrincipal">
-                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-                        <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre nosotros</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                        <li class="nav-item"><a class="btn btn-brand" href="cuenta.html">Mi cuenta</a></li>
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobreNosotros.html">Sobre nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                        <li class="nav-item"><a class="btn btn-brand px-4" href="#">Mi cuenta</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+       
         
+        <!--Hero-->
+        <header class="hero text-white d-flex align-items-center">
+            <img src="imgs/Landscape.png" alt="Landscape" class="hero-img">
+            <div class="container position-relative z-1 py-5">
+                <h1 class="fw-bold">TU PRÓXIMA AVENTURA<br>
+                    <span class="display-6 fw-bold">EMPIEZA AQUÍ</span>
+                </h1>
+                <p class="fs-5">Explora paquetes, escapadas y actividades.</p>
+                <a href="#" class="btn btn-action px-4 py-2">Reservar ahora</a>
+            </div>
+        </header>
+
+        <!--Viaje-->
+        <section class="container buscador shadow-sm bg-white rounded-3 p-3">
+            <form class="row align-items-center g-3">
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-secondary">DESTINO</label>
+                    <input type="text" class="form-control" placeholder="¿Dónde quieres ir?">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-secondary">FECHAS</label>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label small fw-bold text-secondary">VIAJEROS</label>
+                    <select class="form-select">
+                        <option>1 persona</option>
+                        <option selected>2 personas</option>
+                        <option>3 personas</option>
+                        <option>4 personas</option>
+                        <option>5 o más personas</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-brand w-100 py-2">
+                        Buscar viajes
+                    </button>
+                </div>
+            </form>
+        </section>
+
         
+        <!--Ventajas-->
+        <section class="container my-4">
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icono">●</div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Selección cuidada</h6>
+                            <small class="text-secondary">Destinos para todos</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icono">●</div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Atención personalizada</h6>
+                            <small class="text-secondary">Te ayudamos a viajar</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icono">●</div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Reserva clara</h6>
+                            <small class="text-secondary">Sin complicaciones</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icono">●</div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Mejores experiencias</h6>
+                            <small class="text-secondary">Viaja con confianza</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Destinos destacados-->
+        <section class="container my-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold mb-0">Destinos destacados</h4>
+                <a href="#" class="text-brand text-decoration-none fw-semibold">Ver todas las ofertas →</a>
+            </div>
+            <div class="row g-4">
+                <!-- Destino 1 -->
+                <div class="col-md-4">
+                    <div class="card destino-card h-100 p-2">
+                        <div class="row g-2 align-items-center">
+                            <div class="col-5">
+                                <img src="https://i.pinimg.com/736x/d3/53/ad/d353ad5417acab6da889374f39435e3c.jpg" class="destino-img img-fluid" alt="imgD1">                            </div>
+                            <div class="col-7">
+                                <h6 class="fw-bold">Grecia · Islas</h6>
+                                <p class="small text-secondary mb-2">Viajes y experiencias</p>
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span class="text-brand fw-bold">Desde 699 €</span>
+                                    <a href="#" class="btn btn-brand btn-sm">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Destino 2 -->
+                <div class="col-md-4">
+                    <div class="card destino-card h-100 p-2">
+                        <div class="row g-2 align-items-center">
+                            <div class="col-5">
+                                <img src="https://i.pinimg.com/736x/a5/bf/43/a5bf438a20e9d42e1b64ea8a0ddde222.jpg" class="destino-img img-fluid" alt="imgD2">                            </div>
+                            <div class="col-7">
+                                <h6 class="fw-bold">Costa mediterránea</h6>
+                                <p class="small text-secondary mb-2">Viajes y experiencias</p>
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span class="text-brand fw-bold">Desde 499 €</span>
+                                    <a href="#" class="btn btn-brand btn-sm">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Destino 3 -->
+                <div class="col-md-4">
+                    <div class="card destino-card h-100 p-2">
+                        <div class="row g-2 align-items-center">
+
+                            <div class="col-5">
+                                <img src="https://i.pinimg.com/1200x/f4/b0/a6/f4b0a6fe8ca93229efeb30a63403540c.jpg" class="destino-img img-fluid" alt="imgD3">                        </div>
+                            <div class="col-7">
+                                <h6 class="fw-bold">Escapada tropical</h6>
+                                <p class="small text-secondary mb-2">Viajes y experiencias</p>
+                                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                                    <span class="text-brand fw-bold">Desde 899 €</span>
+                                    <a href="#" class="btn btn-brand btn-sm">Ver detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        <!--Footer-->
+        <footer class="footer mt-4 text-white py-3 mt-auto">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold mb-0">Decroly Travel</h6>
+                        <small>Tu próxima aventura empieza aquí</small>
+                    </div>
+                    <div class="col-md-6 text-md-end mt-3 mt-md-0">
+                        <a href="#" class="footer-link">Aviso legal</a>
+                        <a href="#" class="footer-link">Privacidad</a>
+                        <a href="#" class="footer-link">Contacto</a>
+                        <a href="#" class="footer-link">Redes sociales</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

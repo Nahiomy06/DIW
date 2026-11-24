@@ -41,6 +41,18 @@
     filter: brightness(0.5);
 }
 
+.hero.hero-compact {
+    min-height: 5%;
+    max-height: 10%;
+    overflow: hidden;
+}
+
+.hero.hero-compact .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .buscador {
     position: relative;
     margin-top: -10px;
@@ -77,11 +89,15 @@
 
 .destino-img {
     width: 100%;
-    height: 93px;
+    height: 94px;
     object-fit: cover;
     border-radius: 3px;
 }
 
+.destino-img.destino-img-lg {
+    height: 145px;
+    border-radius: 6px;
+}
 .footer {
     background-color: var(--travel-navy);
 }
@@ -116,4 +132,36 @@
 .historia-card {
     border: 1px solid #d5e2e9;
     border-radius: 10px;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--travel-teal) !important;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 5px;
+    background-color: var(--travel-teal);
+    border-radius: 50px;
+}
+
+.valor-cream {
+    background-color: var(--travel-cream);
+}
+
+.valor-teal {
+    background-color: color-mix(in srgb, var(--travel-teal) 40%, transparent);
+}
+
+.paquete-teal {
+    background-color: var(--travel-teal);
+}
+.paquete-clear {
+    background-color: color-mix(in srgb, var(--travel-teal) 10%, transparent);
 }

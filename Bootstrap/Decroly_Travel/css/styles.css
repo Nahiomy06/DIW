@@ -165,3 +165,14 @@
 .paquete-clear {
     background-color: color-mix(in srgb, var(--travel-teal) 10%, transparent);
 }
+
+.resumen-card {
+    background-color: color-mix(in srgb, var(--travel-teal) 5%, #f8fbfc);
+    border: 1px solid #d5e2e9;
+    border-radius: 10px;
+}
+
+.alerta-reserva {
+    background-color: #dcf5e7;
+    color: #31aa72;
+}
